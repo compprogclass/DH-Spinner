@@ -1,0 +1,57 @@
+use Libraries.System.SystemHelper
+use Libraries.Containers.Array
+use Libraries.Compute.Random
+class Main 
+    action Main
+        //HiUser()
+        //say "going to GreetUser"
+        //GreetUser()
+        //say "back from GreetUser"
+        
+        //BalanceOfUser()
+        RandomGenerator()
+        output "Done! "
+
+    end
+
+    action GreetUser
+        output "hello there"
+    end
+    action BalanceOfUser
+            text UserBalance =input("How much money do you have?")
+            //say "You have $"+UserBalance
+    end
+    action HiUser
+        text hiUser = input("what is your name?")
+        say "hello there" + hiUser
+    end
+    action RandomGenerator
+        Array<integer> block
+        integer i = 0
+        SystemHelper freeze
+            freeze:Sleep(5000)
+        Random spin 
+        repeat 40 times
+            i =  spin:RandomIntegerBetween(1,100)
+            boolean Check = HasElement(i,block)
+            if Check = false
+                block:Add(i)
+            end
+        end
+            
+        integer j = 0
+        output "Array size " + block:GetSize()
+        repeat 30 times
+            say block:Get(j)
+            freeze:Sleep(5000)
+            output block:Get(j)
+            j = j+1
+        end
+    end
+    action HasElement(integer k,Array<integer> block) returns boolean
+        boolean result = true
+        result = block:Has(k) 
+        return result 
+    end
+    
+end
