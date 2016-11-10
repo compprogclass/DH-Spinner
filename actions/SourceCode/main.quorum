@@ -43,8 +43,13 @@ class Main
         output "Array size " + block:GetSize()
         repeat 30 times
             say block:Get(j)
-            freeze:Sleep(5000)
+            //freeze:Sleep(5000)
+                integer a = 0
+                a = a + 1000
+                freeze:Sleep(a)
             output block:Get(j)
+freeze:Sleep(1000)
+//hi
             j = j+1
         end
     end
