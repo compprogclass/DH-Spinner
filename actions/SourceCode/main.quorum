@@ -31,7 +31,7 @@ class Main
         SystemHelper freeze
             freeze:Sleep(5000)
         Random spin 
-        repeat 40 times
+        repeat 10 times
             i =  spin:RandomIntegerBetween(1,100)
             boolean Check = HasElement(i,block)
             if Check = false
@@ -48,7 +48,7 @@ class Main
                 a = a + 1000
                 freeze:Sleep(a)
             output block:Get(j)
-freeze:Sleep(1000)
+            freeze:Sleep(1000)
 //hi
             j = j+1
         end
