@@ -27,7 +27,7 @@ class Main
     end
     action RandomGenerator
         Array<integer> block
-        integer i = 0
+        integer i = 10
         SystemHelper freeze
             freeze:Sleep(5000)
         Random spin 
