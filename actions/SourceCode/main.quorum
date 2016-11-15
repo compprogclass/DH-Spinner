@@ -38,20 +38,22 @@ class Main
                 block:Add(i)
             end
         end
-            
+        integer a = 0        
         integer j = 0
+
         output "Array size " + block:GetSize()
-        repeat 30 times
+        repeat 10 times
             say block:Get(j)
-            //freeze:Sleep(5000)
-                integer a = 0
+            freeze:Sleep(2000)
+               
                 a = a + 1000
                 freeze:Sleep(a)
             output block:Get(j)
-            freeze:Sleep(1000)
-//hi
+            freeze:Sleep(2000)
+
             j = j+1
         end
+         
     end
     action HasElement(integer k,Array<integer> block) returns boolean
         boolean result = true
