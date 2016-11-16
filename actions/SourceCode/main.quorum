@@ -42,7 +42,7 @@ class Main
         integer j = 0
 
         output "Array size " + block:GetSize()
-        repeat 10 times
+        repeat 6 times
             say block:Get(j)
             freeze:Sleep(2000)
                
