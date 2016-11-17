@@ -29,7 +29,7 @@ class Main
         Array<integer> block
         integer i = 10
         SystemHelper freeze
-            freeze:Sleep(5000)
+            freeze:Sleep(2000)
         Random spin 
         repeat 10 times
             i =  spin:RandomIntegerBetween(1,100)
@@ -46,7 +46,7 @@ class Main
             say block:Get(j)
             freeze:Sleep(2000)
                
-                a = a + 1000
+                a = a + 2000
                 freeze:Sleep(a)
             output block:Get(j)
             freeze:Sleep(2000)
