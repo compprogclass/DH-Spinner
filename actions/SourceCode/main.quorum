@@ -28,10 +28,10 @@ class Main
     action RandomGenerator
         Array<integer> block
         integer i = 10
-        SystemHelper freeze
-            freeze:Sleep(2000)
+        SystemHelper halt
+                    halt:Sleep(200)
         Random spin 
-        repeat 10 times
+        repeat 6 times
             i =  spin:RandomIntegerBetween(1,100)
             boolean Check = HasElement(i,block)
             if Check = false
@@ -44,12 +44,12 @@ class Main
         output "Array size " + block:GetSize()
         repeat 6 times
             say block:Get(j)
-            freeze:Sleep(2000)
+            halt:Sleep(1000)
                
                 a = a + 2000
-                freeze:Sleep(a)
+                halt:Sleep(a)
             output block:Get(j)
-            freeze:Sleep(2000)
+            halt:Sleep(2000)
 
             j = j+1
         end
