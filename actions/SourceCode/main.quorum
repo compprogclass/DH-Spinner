@@ -29,9 +29,9 @@ class Main
         Array<integer> block
         integer i = 10
         SystemHelper halt
-                    halt:Sleep(200)
+                 halt:Sleep(100)
         Random spin 
-        repeat 6 times
+        repeat 10 times
             i =  spin:RandomIntegerBetween(1,100)
             boolean Check = HasElement(i,block)
             if Check = false
@@ -44,13 +44,11 @@ class Main
         output "Array size " + block:GetSize()
         repeat 6 times
             say block:Get(j)
-            halt:Sleep(1000)
-               
-                a = a + 2000
-                halt:Sleep(a)
+            halt:Sleep(400)            
+            a = a + 2000
+            halt:Sleep(a)
             output block:Get(j)
-            halt:Sleep(2000)
-
+            halt:Sleep(200)
             j = j+1
         end
          
