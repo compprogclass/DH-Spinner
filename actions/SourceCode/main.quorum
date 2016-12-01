@@ -1,3 +1,4 @@
+use Libraries.Game.Shapes.all
 use Libraries.System.SystemHelper
 use Libraries.Containers.Array
 use Libraries.Compute.Random
@@ -10,7 +11,8 @@ class Main
         
         //BalanceOfUser()
         RandomGenerator()
-        output "Done! "
+        say "Done! "
+            output "Done!"
 
     end
 
@@ -44,8 +46,8 @@ class Main
         output "Array size " + block:GetSize()
         repeat 10 times
             say block:Get(j)
-            //halt:Sleep(1000)            
-            a = a + 1000
+            //halt:Sleep(500)            
+            a = a + 300
             halt:Sleep(a)
             output block:Get(j)
             //halt:Sleep(200)
