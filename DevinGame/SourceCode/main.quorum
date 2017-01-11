@@ -1,3 +1,4 @@
+
 use Libraries.Interface.Events.KeyboardEvent
 use Libraries.Game.InputMonitor
 use Libraries.Game.Graphics.Label
@@ -22,6 +23,8 @@ class Main is Game
 InputMonitor keyboard
 KeyboardEvent pressbutton
     Label spaces
+Rectangle background
+
     Color color 
     /*    This action, Main, starts our computer program. In Quorum, programs always
         begin from Main.
@@ -38,6 +41,7 @@ KeyboardEvent pressbutton
     */
     action CreateGame
         RandomGenerator()
+background
     end
 
     /*
@@ -48,8 +52,9 @@ KeyboardEvent pressbutton
     */
  
     action Update(number seconds)
-spaces:SetPosition(
-        spaces:SetColor(color:Black())
+spaces:SetPosition(350, 350)
+        spaces:SetColor(color:White())
+
 spaces:SetSize(87)
 
         spaces:SetText(space)
