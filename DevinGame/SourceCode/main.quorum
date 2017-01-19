@@ -5,7 +5,7 @@ use Libraries.Game.Graphics.Label
 use Libraries.Game.Graphics.Color
 
 use Libraries.Game.Game
-use Libraries.Game.Shapes.Rectangle 
+use Libraries.Game.Graphics.Drawable
 use Libraries.System.SystemHelper
 use Libraries.Containers.Array
 use Libraries.Compute.Random
@@ -23,7 +23,9 @@ class Main is Game
 InputMonitor keyboard
 KeyboardEvent pressbutton
     Label spaces
-Rectangle background
+Label helptext
+Drawable background
+Drawable canvas
 
     Color color 
     /*    This action, Main, starts our computer program. In Quorum, programs always
@@ -41,7 +43,21 @@ Rectangle background
     */
     action CreateGame
         RandomGenerator()
-background
+helptext:SetText("Press enter to start game or press X to exit.")
+helptext:SetSize(34)
+helptext:SetColor(color:Yellow())
+
+background:LoadFilledRectangle(13666, 768)
+canvas:LoadFilledRectangle(80, 80)
+canvas:SetColor(color:White())
+canvas:LoadRectangle(80, 80)
+canvas:SetPosition(5, 5)
+canvas:SetColor(color:White())
+
+background:SetColor(color:Black())
+Add(background)
+Add(helptext)
+Add(canvas)
     end
 
     /*
@@ -72,7 +88,7 @@ spaces:SetSize(87)
               //   halt:Sleep(100)
         Random spin 
         repeat 15 times
-            i =  spin:RandomIntegerBetween(1,100)
+            i =  spin:RandomIntegerBetween(1,10)
             boolean Check = HasElement(i,block)
             if Check = false
                 block:Add(i)
@@ -82,7 +98,7 @@ spaces:SetSize(87)
 
 
         output "Array size " + block:GetSize()
-        repeat 10 times
+        repeat 5 times
 //            say block:Get(j)
             //halt:Sleep(500)            
             a = a + 300
